@@ -1,0 +1,91 @@
+
+.fieldsrt-form {
+  position: relative;
+}
+.input-form {
+  border: 1px solid rgba($color: #252525, $alpha: 0.3);
+  position: relative;
+}
+.label-form {
+  padding: 15px;
+  width: 100%;
+  font-weight: 200;
+  text-align: center;
+}
+fieldset {
+  position: relative;
+}
+label {
+  position: absolute;
+  // top: 0;
+  left: 0;
+  padding: rem(10);
+  transition: all 0.3s ease 0s;
+  pointer-events: none;
+}
+input,
+select {
+  position: relative;
+  height: 50px;
+  padding: rem(10);
+  width: 100%;
+
+  font-size: rem(16);
+  color: #252525;
+}
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  opacity: 0;
+}
+//убираем крестики у input search
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+//убирает крстик у input search в IE и Safari
+.someinput::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+//УБЕРАЕМ ВСТРОЕННЫЕ СТИЛИ
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  appearance: none;
+  width: 0;
+  height: 0;
+  border: 0;
+  // @extend .visually-hidden;
+}
+summary {
+  display: inline-block; // убирает стрелки
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+select {
+  appearance: none;
+}
+
+//========================================================================================================================================================
+
+summary:after {
+  content: url("../images/icons.svg#arrowBrown");
+  width: rem(25);
+  height: rem(25);
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+  @media (min-width: $pc) {
+    display: none;
+  }
+}
+
+details[open] > summary:after {
+  transform: rotateZ(-180deg);
+}
