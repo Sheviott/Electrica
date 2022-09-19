@@ -1,21 +1,224 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('html/head.html', {
-'title': 'Главная'
-})
+  @@include('html/head.html', { 'title': 'Главная' })
 
-<body>
-  <div class="wrapper">
-    @@include('html/header.html', {
-    })
-    <main class="page">
-      <div>Hello main!</div>
-    </main>
-    @@include('html/footer.html', {
-      })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html', { })
+      <main class="page">
+        <section class="residential">
+          <picture class="residential__image">
+            <source
+              media="(max-width: 767px)"
+              srcset="@img/main/residential/main-screen-mobile.jpg"
+              type="image/webp"
+            />
+            <img src="@img/main/residential/main-screen.jpg" srcset="" alt="" />
+          </picture>
+          <div class="residential__wrapper">
+            <div class="residential__body">
+              <div class="residential__title title">Residential</div>
+              <div class="residential__text text">
+                Before installing any electrical system, we recommend a complete
+                analysis of your power quality. Some utility lines have
+                anomalies in voltage and current distribution. Let’s find and
+                resolve these issues before integrating a new system. Get a
+                thorough analysis today!
+              </div>
+              <div class="residential__columns">
+                <div class="residential__column column">
+                  <div class="column__name">Upper & Hi-end Housing</div>
+                  <div class="column__text">
+                    Upper High-End class. <br />
+                    No bullshit electrical. <br />
+                    Smart home
+                  </div>
+                </div>
+                <div class="residential__column column">
+                  <div class="column__name">Multi-Family (MDU)</div>
+                  <div class="column__text">
+                    Many intentional communities incorporate multifamily
+                    residences.
+                  </div>
+                </div>
+              </div>
+              <a href="" class="residential__button btn">Request a quote</a>
+              <a href="" class="residential__more-info show-more">More info</a>
+            </div>
+          </div>
+        </section>
+        <section class="differentiators">
+          <div class="differentiators__container">
+            <div class="differentiators__body">
+              <div class="differentiators__title title">Differentiators</div>
+              <div class="differentiators__columns">
+                <div class="differentiators__column column">
+                  <div class="column__icon">
+                    <img src="@img/main/differentiators/Energy.svg" alt="" />
+                  </div>
+                  <div class="column__body">
+                    <div class="column__name">Energy</div>
+                    <div class="column__text">Passion to perform</div>
+                  </div>
+                </div>
+                <div class="differentiators__column column">
+                  <div class="column__icon">
+                    <img src="@img/main/differentiators/Safety.svg" alt="" />
+                  </div>
+                  <div class="column__body">
+                    <div class="column__name">Safety</div>
+                    <div class="column__text">
+                      No accidents, safety program, PPE
+                    </div>
+                  </div>
+                </div>
+                <div class="differentiators__column column">
+                  <div class="column__icon">
+                    <img
+                      src="@img/main/differentiators/Intelligence.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="column__body">
+                    <div class="column__name">Intelligence</div>
+                    <div class="column__text mobile">
+                      Knowledge of Code, University, Engineering, Prefabrication
+                    </div>
+                    <div class="column__text desktop">
+                      <p>
+                        State-of-the-art computer software for collaboration and
+                        transparency
+                      </p>
 
-  </div>
-  @@include('html/script.html', {
-    })
-</body>
+                      <p>Knowledge of Code, University</p>
+
+                      <p>Engineering </p>
+
+                      <p>Prefabrication</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="differentiators__column column">
+                  <div class="column__icon">
+                    <img src="@img/main/differentiators/Integrity.svg" alt="" />
+                  </div>
+                  <div class="column__body">
+                    <div class="column__name">Integrity</div>
+                    <div class="column__text mobile">
+                      Search for solutions, better for the Client
+                    </div>
+                    <div class="column__text desktop">
+                    <p>  Zero tolerance to Code violations</p>
+                      <p>Zero tolerance to Safety violations</p>
+
+                     <p> Search for solutions, better for the Client</p>
+
+                    <p>  Support for our top performers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="differentiators__about about-us">
+              <div class="about-us__title title">About us</div>
+              <div class="about-us__text">
+                <p>
+                  Electrica, Inc. is a committed C-10 specialty electrical
+                  contractor, located in San Diedo, California, USA.
+                </p>
+                <p>
+                  We work to help the patients to live and be healthy, and bring
+                  our best to fill the corridors of the hospital with smiles,
+                  not tears.
+                </p>
+              </div>
+              <div class="about-us__columns">
+                <div class="about-us__column">
+                  <div class="about-us__redline">
+                    20
+                    <span>years</span>
+                  </div>
+                  <div class="about-us__info">
+                    Experience in electronic business
+                  </div>
+                </div>
+                <div class="about-us__column">
+                  <div class="about-us__redline">
+                    350
+                    <span>clients</span>
+                  </div>
+                  <div class="about-us__info">Satisfied customers</div>
+                </div>
+              </div>
+              <a href="" class="differentiators__learn-more show-more">
+                Learn more about us
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="request">
+          <div class="request__container">
+            <div class="request__body">
+              <div class="request__title title">Request a quote</div>
+              <div class="request__text">
+                We appreciate every partner, regardless of the size of his
+                possibilities and try to find an individual approach to each
+                client.
+              </div>
+              <form action="" class="request__form form">
+                <div class="form__body">
+                  <div class="form__left">
+                    <div class="form__row">
+                      <label class="form__label" for="name">your name</label>
+                      <input
+                        class="form__input"
+                        id="name"
+                        class="input__form"
+                        placeholder="Anna"
+                        type="text"
+                      />
+                    </div>
+                    <div class="form__row">
+                      <label class="form__label" for="e-mail">e-mail</label>
+                      <input
+                        class="form__input"
+                        id="e-mail"
+                        placeholder="alexander@gmail.com"
+                        class="input__form"
+                        type="email"
+                      />
+                    </div>
+                    <div class="form__row">
+                      <label class="form__label" for="tel">phone</label>
+                      <input
+                        class="form__input"
+                        id="tel"
+                        placeholder="Phone number"
+                        class="input__form"
+                        type="tel"
+                      />
+                    </div>
+                  </div>
+                  <div class="form__row form__row--textarea">
+                    <label class="form__label" for="message">message</label>
+                    <textarea
+                      placeholder="Your text"
+                      class="form__input form__textarea"
+                      id="message"
+                      name=""
+                    ></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="form__button btn">
+                  Send request
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/footer.html', { })
+    </div>
+    @@include('html/script.html', { })
+  </body>
 </html>
