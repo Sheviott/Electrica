@@ -193,6 +193,14 @@ img {
   }
 }
 
+.header__icon:hover .icon,
+.footer__icon:hover .icon {
+  fill: #bb0a0a;
+}
+.header .search__icon:hover .icon,
+.footer .search__icon:hover .icon {
+  stroke: #bb0a0a;
+}
 .header a:hover,
 .footer a:hover {
   text-decoration: underline;
@@ -270,6 +278,7 @@ img {
 .header .search__icon {
   width: 32px;
   height: 32px;
+  background: transparent;
 }
 .header .search__body {
   position: absolute;

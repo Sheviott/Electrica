@@ -49,6 +49,16 @@
 }
 .header,
 .footer {
+  &__icon:hover {
+    .icon{
+      fill:#bb0a0a ;
+    }
+  }
+  .search__icon:hover {
+    .icon{
+      stroke:#bb0a0a ;
+    }
+  }
   a {
     &:hover {
       text-decoration: underline;
