@@ -1,52 +1,53 @@
 .header {
-
 	&__body {
 		border-bottom: 1px solid rgba($color: #a3a3a3, $alpha: 0.4);
 		padding: 5px 0;
+
 		@media (min-width: $tablet) {
 			padding: 19px 0;
-			// height: auto;
-		}
-		@media (min-width: $tablet) {
-			// padding: 19px 0;
-			// height: auto;
 		}
 	}
+
 	&__container {
 		display: flex;
 		flex-flow: row;
 		align-items: center;
-
 	}
-	&__search {
 
+	&__search {
 		flex: 0 0;
 		order: 1;
 		padding-right: 16px;
+
 		@media (min-width: $tablet) {
 			padding-right: 24px;
 			order: 0;
 			border-right: 1px solid #eeeeee;
 		}
 	}
+
 	&__menu {
 		order: 2;
+
 		@media (min-width: $tablet) {
 			order: 0;
 			flex: 1;
 		}
 	}
+
 	&__logo {
 		flex: 1 1 80%;
 
 		img {
 			max-width: rem(120);
+
 			@media (min-width: $tablet) {
 				max-width: 233px;
 			}
-			// @include adaptiveValue("max-width", 233, 120);
 		}
+
 		z-index: 1;
+
 		@media (min-width: $tablet) {
 			position: absolute;
 			top: 10px;
@@ -55,40 +56,35 @@
 			transform: translate(-50%, 0);
 		}
 	}
+
 	&__emergency {
 		display: flex;
 		flex-flow: row;
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
+
 		a {
 			color: black;
 		}
 	}
 
-	.lock-padding {
-	}
 	.search {
 		position: relative;
+
 		&__icon {
 			width: 32px;
 			height: 32px;
 			background: transparent;
 		}
+
 		&__body {
 			position: absolute;
 			display: none;
 		}
-		&__input {
-		}
 	}
-	.input {
-		&__form {
-		}
-	}
+
 	.menu {
-		&__icon {
-		}
 		&__name {
 			@media (max-width: $tablet) {
 				text-align: center;
@@ -97,8 +93,10 @@
 				color: #000000;
 				font-weight: 600;
 			}
+
 			display: none;
 		}
+
 		&__body {
 			position: absolute;
 			bottom: 0;
@@ -111,6 +109,7 @@
 			overflow: auto;
 			padding: 120px 0 30px 0;
 			transform: translate(-100%, 0);
+
 			@media (min-width: $tablet) {
 				display: flex;
 				position: relative;
@@ -121,11 +120,13 @@
 				overflow: hidden;
 				padding: 0;
 			}
+
 			//Класс для плавного показа меню боди (при нажатии на меню бургер)
 			&.__active-menu--burger {
 				transform: translate(0, 0);
 			}
 		}
+
 		&__list {
 			display: flex;
 			flex-flow: column;
@@ -133,6 +134,7 @@
 			align-items: center;
 			gap: em(24);
 			margin-bottom: rem(24);
+
 			@media (min-width: $tablet) {
 				margin-bottom: rem(0);
 				flex-flow: row nowrap;
@@ -141,37 +143,32 @@
 				padding-left: 24px;
 			}
 		}
-		&__item {
-		}
+
 		&__link {
 			color: #000000;
 			font-size: rem(20);
-			// @include adaptiveValue("font-size", 16, 20);
+
 			@media (min-width: $tablet) {
 				color: #808080;
 				font-size: rem(14);
 			}
+		}
+	}
 
-		}
-	}
-	.icon-menu {
-	}
 	.emergency {
-		&__icon {
-		}
 		&__text {
 			margin-bottom: rem(5);
 			font-size: 12px;
 			color: #808080;
 		}
+
 		&__number {
 			font-weight: 600;
 		}
 	}
 }
+
 .header {
-	&__bottom {
-	}
 	&__list {
 		display: flex;
 		flex-flow: column;
@@ -179,6 +176,7 @@
 		align-items: center;
 		gap: em(24);
 		margin-bottom: rem(54);
+
 		@media (min-width: $tablet) {
 			margin: 0;
 			text-align: center;
@@ -189,12 +187,15 @@
 			gap: 30px;
 		}
 	}
+
 	&__item {
 		display: inline-block;
 	}
+
 	&__link {
 		color: #000000;
 		font-size: rem(20);
+
 		@media (min-width: $tablet) {
 			padding: 10px 20px;
 			font-size: rem(18);
@@ -202,15 +203,10 @@
 		}
 	}
 }
-
-//====================================================================================================
-
-//====================================================================================================
-
 //Burger
-
 .icon-menu {
 	display: none;
+
 	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
@@ -219,6 +215,7 @@
 		cursor: pointer;
 		background-color: transparent;
 		z-index: 5;
+
 		span,
 		&::before,
 		&::after {
@@ -230,27 +227,30 @@
 			height: rem(2);
 			background-color: rgb(0, 0, 0);
 		}
+
 		&::before {
 			top: 0;
 		}
+
 		&::after {
 			bottom: 0;
 		}
+
 		span {
 			top: calc(50% - rem(1));
 		}
+
 		// при нажатии на меню бургер превращается в закрывающую кнопку
 		&.menu-open {
 			span {
 				width: 0;
 			}
-			&::before,
-			&::after {
-			}
+
 			&::before {
 				top: calc(50% - rem(1));
 				transform: rotate(-45deg);
 			}
+
 			&::after {
 				bottom: calc(50% - rem(1));
 				transform: rotate(45deg);

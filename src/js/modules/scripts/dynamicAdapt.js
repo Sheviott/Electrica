@@ -36,25 +36,42 @@ DynamicAdapt.prototype.init = function () {
 	this.arraySort(this.оbjects);
 
 	// массив уникальных медиа-запросов
-	this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
-		return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
-	}, this);
-	this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
-		return Array.prototype.indexOf.call(self, item) === index;
-	});
+	this.mediaQueries = Array.prototype.map.call(
+		this.оbjects,
+		function (item) {
+			return (
+				"(" +
+				this.type +
+				"-width: " +
+				item.breakpoint +
+				"px)," +
+				item.breakpoint
+			);
+		},
+		this
+	);
+	this.mediaQueries = Array.prototype.filter.call(
+		this.mediaQueries,
+		function (item, index, self) {
+			return Array.prototype.indexOf.call(self, item) === index;
+		}
+	);
 
 	// навешивание слушателя на медиа-запрос
 	// и вызов обработчика при первом запуске
 	for (let i = 0; i < this.mediaQueries.length; i++) {
 		const media = this.mediaQueries[i];
-		const mediaSplit = String.prototype.split.call(media, ',');
+		const mediaSplit = String.prototype.split.call(media, ",");
 		const matchMedia = window.matchMedia(mediaSplit[0]);
 		const mediaBreakpoint = mediaSplit[1];
 
 		// массив объектов с подходящим брейкпоинтом
-		const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
-			return item.breakpoint === mediaBreakpoint;
-		});
+		const оbjectsFilter = Array.prototype.filter.call(
+			this.оbjects,
+			function (item) {
+				return item.breakpoint === mediaBreakpoint;
+			}
+		);
 		matchMedia.addListener(function () {
 			_this.mediaHandler(matchMedia, оbjectsFilter);
 		});
@@ -82,26 +99,26 @@ DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
 // Функция перемещения
 DynamicAdapt.prototype.moveTo = function (place, element, destination) {
 	element.classList.add(this.daClassname);
-	if (place === 'last' || place >= destination.children.length) {
-		destination.insertAdjacentElement('beforeend', element);
+	if (place === "last" || place >= destination.children.length) {
+		destination.insertAdjacentElement("beforeend", element);
 		return;
 	}
-	if (place === 'first') {
-		destination.insertAdjacentElement('afterbegin', element);
+	if (place === "first") {
+		destination.insertAdjacentElement("afterbegin", element);
 		return;
 	}
-	destination.children[place].insertAdjacentElement('beforebegin', element);
-}
+	destination.children[place].insertAdjacentElement("beforebegin", element);
+};
 
 // Функция возврата
 DynamicAdapt.prototype.moveBack = function (parent, element, index) {
 	element.classList.remove(this.daClassname);
 	if (parent.children[index] !== undefined) {
-		parent.children[index].insertAdjacentElement('beforebegin', element);
+		parent.children[index].insertAdjacentElement("beforebegin", element);
 	} else {
-		parent.insertAdjacentElement('beforeend', element);
+		parent.insertAdjacentElement("beforeend", element);
 	}
-}
+};
 
 // Функция получения индекса внутри родителя
 DynamicAdapt.prototype.indexInParent = function (parent, element) {
@@ -109,7 +126,7 @@ DynamicAdapt.prototype.indexInParent = function (parent, element) {
 	return Array.prototype.indexOf.call(array, element);
 };
 
-// Функция сортировки массива по breakpoint и place 
+// Функция сортировки массива по breakpoint и place
 // по возрастанию для this.type = min
 // по убыванию для this.type = max
 DynamicAdapt.prototype.arraySort = function (arr) {
